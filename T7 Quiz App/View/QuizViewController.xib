@@ -32,8 +32,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="506"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-Mf-j4o" userLabel="Question Label">
-                            <rect key="frame" x="160" y="239" width="94" height="29"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-Mf-j4o" userLabel="Question Label">
+                            <rect key="frame" x="21" y="97" width="375" height="215"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <nil key="textColor"/>
@@ -79,6 +79,9 @@
                             <state key="normal" title="Answer 1">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="B2T-wQ-cUa"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veK-qV-dVu">
                             <rect key="frame" x="78" y="61" width="259" height="36"/>
@@ -87,6 +90,9 @@
                             <state key="normal" title="Answer 2">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="04V-Jx-aZ3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-Rn-Vbf">
                             <rect key="frame" x="78" y="110" width="259" height="36"/>
@@ -95,6 +101,9 @@
                             <state key="normal" title="Answer 3">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="ouM-s3-Vwe"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCD-1T-AiB">
                             <rect key="frame" x="78" y="164" width="259" height="36"/>
@@ -103,6 +112,9 @@
                             <state key="normal" title="Answer 4">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="7ws-EM-y1h"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

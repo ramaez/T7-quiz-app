@@ -16,7 +16,6 @@ class QuizBank {
         
         switch character {
         case .eddy:
-            print("picked eddy")
             
             //Eddy Questions
             list.append(Question(text: "on block df2 is...", answerOne: "safe", answerTwo: "punishable", answerThree: "plus on block", answerFour: "unblockable", correctAnswer: 1, fighter: Fighter.eddy))

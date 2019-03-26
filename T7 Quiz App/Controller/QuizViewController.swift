@@ -35,10 +35,9 @@ class QuizViewController: UIViewController {
     
     var characterPicked: Fighter = .akuma
     var pickedAnswer: Int = 0
+    var questionNumber: Int = 0
     let nameConversionObject = NameConversion()
-    //var questionsForOneCharacter: [Question] = []
-    
-    
+    var score: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +45,14 @@ class QuizViewController: UIViewController {
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //Use Delegate to get the fighter we want, then convert the fighter to an enum and use it to get the right questions
         if((delegate) != nil) {
             print(delegate!.selectFighter() ?? "nil")
             characterPicked = nameConversionObject.convertStringToFighter(name: delegate!.selectFighter()!)
         }
         
-        let allQuestions: QuizBank = QuizBank(picked: characterPicked)
+        nextQuestion()
     }
     
     @IBAction func answerPressed(_ sender: AnyObject) {
@@ -70,6 +69,58 @@ class QuizViewController: UIViewController {
         else if sender.tag == 4 {
             pickedAnswer = 4
         }
+        
+        checkAnswer()
+        
+        questionNumber = questionNumber + 1
+        
+        nextQuestion()
+    }
+    
+    func checkAnswer() {
+        let correctAnswer = QuizBank(picked: characterPicked).list[questionNumber].answer
+        
+        if pickedAnswer == correctAnswer {
+            score = score + 1
+            print("correct")
+        }
+        else {
+            print("wrong")
+        }
+    }
+    
+    func updateUI() {
+        let totalNumberOfQuestions: Int = QuizBank(picked: characterPicked).list.count
+        scoreLabel.text = "Score: \(score)"
+        progressLabel.text = "\(questionNumber + 1) / \(totalNumberOfQuestions)"
+        progressBar.frame.size.width = (view.frame.size.width/CGFloat(totalNumberOfQuestions)) * CGFloat(questionNumber + 1)
+        
+    }
+    
+    func nextQuestion() {
+        if questionNumber <= QuizBank(picked: characterPicked).list.count - 1 {
+            questionLabel.text = QuizBank(picked: characterPicked).list[questionNumber].questionText
+            let answerA = QuizBank(picked: characterPicked).list[questionNumber].firstAnswerText
+            let answerB = QuizBank(picked: characterPicked).list[questionNumber].secondAnswerText
+            let answerC = QuizBank(picked: characterPicked).list[questionNumber].thirdAnswerText
+            let answerD = QuizBank(picked: characterPicked).list[questionNumber].fourthAnswerText
+            answerBoxA.setTitle(answerA, for: .normal)
+            answerBoxB.setTitle(answerB, for: .normal)
+            answerBoxC.setTitle(answerC, for: .normal)
+            answerBoxD.setTitle(answerD, for: .normal)
+            updateUI()
+        }
+        else {
+            startOver()
+        }
+    }
+    
+    func startOver() {
+        
+        score = 0
+        questionNumber = 0
+        nextQuestion()
+        
     }
 
 }
