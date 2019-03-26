@@ -16,6 +16,10 @@ import UIKit
  
 */
 
+protocol QuizViewControllerDelegate {
+    func selectFighter() -> String?
+}
+
 class QuizViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
@@ -27,9 +31,11 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var answerBoxC: UIButton!
     @IBOutlet weak var answerBoxD: UIButton!
     
+    var delegate: QuizViewControllerDelegate?
     
     var characterPicked: Fighter = .akuma
     var pickedAnswer: Int = 0
+    let nameConversionObject = NameConversion()
     //var questionsForOneCharacter: [Question] = []
     
     
@@ -37,17 +43,17 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let allQuestions: QuizBank = QuizBank(picked: characterPicked)
-        
-        /*
-        for i in allQuestions.list {
-            if i.character == characterPicked {
-                questionsForOneCharacter.append(i)
-            }
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Use Delegate to get the fighter we want, then convert the fighter to an enum and use it to get the right questions
+        if((delegate) != nil) {
+            print(delegate!.selectFighter() ?? "nil")
+            characterPicked = nameConversionObject.convertStringToFighter(name: delegate!.selectFighter()!)
         }
-        */
-
-        // Do any additional setup after loading the view.
+        
+        let allQuestions: QuizBank = QuizBank(picked: characterPicked)
     }
     
     @IBAction func answerPressed(_ sender: AnyObject) {
@@ -65,16 +71,5 @@ class QuizViewController: UIViewController {
             pickedAnswer = 4
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

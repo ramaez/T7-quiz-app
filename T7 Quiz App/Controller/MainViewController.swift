@@ -10,12 +10,15 @@ import UIKit
 
 private let reuseIdentifier = "CharCell"
 
-class MainViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, QuizViewControllerDelegate {
+    
+    
     
     @IBOutlet var collectionView: UICollectionView!
     
     var characterList = CharacterListBank().list
     var quizViewController = QuizViewController()
+    var selectedFighter: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         collectionView.register(UINib.init(nibName: "CharacterCell", bundle: nil), forCellWithReuseIdentifier: "CharCell")
         
         
+    }
+    
+    func selectFighter() -> String? {
+        return selectedFighter
     }
 
 
@@ -68,7 +75,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         return CGPoint(x: 20, y: 20)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        quizViewController.delegate = self
+        self.selectedFighter = characterList[indexPath.row]
         self.navigationController?.pushViewController(quizViewController, animated: true)
+        
         //self.present(quizViewController, animated: true)
     }
 

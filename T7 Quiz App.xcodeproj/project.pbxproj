@@ -16,6 +16,7 @@
 		532A7B492202811B0030C30C /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A7B472202811B0030C30C /* CharacterCell.swift */; };
 		532A7B4A2202811B0030C30C /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 532A7B482202811B0030C30C /* CharacterCell.xib */; };
 		532A7B4C2202873E0030C30C /* CharacterListBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532A7B4B2202873E0030C30C /* CharacterListBank.swift */; };
+		533442012249AFE8003518B7 /* NameConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533442002249AFE8003518B7 /* NameConversion.swift */; };
 		534DDF29220BE01800032A9C /* QuizBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DDF28220BE01800032A9C /* QuizBank.swift */; };
 		534DDF2B220BE03A00032A9C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DDF2A220BE03A00032A9C /* Question.swift */; };
 		534DDF2D220BE35700032A9C /* FighterEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DDF2C220BE35700032A9C /* FighterEnum.swift */; };
@@ -34,6 +35,7 @@
 		532A7B472202811B0030C30C /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		532A7B482202811B0030C30C /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		532A7B4B2202873E0030C30C /* CharacterListBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListBank.swift; sourceTree = "<group>"; };
+		533442002249AFE8003518B7 /* NameConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameConversion.swift; sourceTree = "<group>"; };
 		534DDF28220BE01800032A9C /* QuizBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBank.swift; sourceTree = "<group>"; };
 		534DDF2A220BE03A00032A9C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		534DDF2C220BE35700032A9C /* FighterEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterEnum.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				534DDF28220BE01800032A9C /* QuizBank.swift */,
 				534DDF2A220BE03A00032A9C /* Question.swift */,
 				534DDF2C220BE35700032A9C /* FighterEnum.swift */,
+				533442002249AFE8003518B7 /* NameConversion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				534DDF29220BE01800032A9C /* QuizBank.swift in Sources */,
 				532A7B2D22027BA90030C30C /* AppDelegate.swift in Sources */,
 				532A7B4C2202873E0030C30C /* CharacterListBank.swift in Sources */,
+				533442012249AFE8003518B7 /* NameConversion.swift in Sources */,
 				534DDF2B220BE03A00032A9C /* Question.swift in Sources */,
 				53964A302207C2A10069D8E5 /* MainViewController.swift in Sources */,
 			);
