@@ -41,8 +41,6 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +49,11 @@ class QuizViewController: UIViewController {
             print(delegate!.selectFighter() ?? "nil")
             characterPicked = nameConversionObject.convertStringToFighter(name: delegate!.selectFighter()!)
         }
+        
+        answerBoxA.titleLabel!.adjustsFontSizeToFitWidth = true
+        answerBoxB.titleLabel!.adjustsFontSizeToFitWidth = true
+        answerBoxC.titleLabel!.adjustsFontSizeToFitWidth = true
+        answerBoxD.titleLabel!.adjustsFontSizeToFitWidth = true
         
         nextQuestion()
     }
@@ -82,9 +85,11 @@ class QuizViewController: UIViewController {
         
         if pickedAnswer == correctAnswer {
             score = score + 1
+            ProgressHUD.showSuccess("Correct")
             print("correct")
         }
         else {
+            ProgressHUD.showError("Wrong")
             print("wrong")
         }
     }
@@ -111,7 +116,14 @@ class QuizViewController: UIViewController {
             updateUI()
         }
         else {
-            startOver()
+            let alert = UIAlertController(title: "Done", message: "Reset to the beginning?", preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Restart", style: .default) { (UIAlertAction) in
+                self.startOver()
+            }
+            
+            alert.addAction(restartAction)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
     

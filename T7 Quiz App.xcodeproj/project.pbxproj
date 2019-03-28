@@ -21,6 +21,8 @@
 		534DDF2B220BE03A00032A9C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DDF2A220BE03A00032A9C /* Question.swift */; };
 		534DDF2D220BE35700032A9C /* FighterEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DDF2C220BE35700032A9C /* FighterEnum.swift */; };
 		53964A302207C2A10069D8E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53964A2F2207C2A10069D8E5 /* MainViewController.swift */; };
+		53CB79C0224C5A4800B39390 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53CB79BD224C5A4800B39390 /* ProgressHUD.bundle */; };
+		53CB79C1224C5A4800B39390 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CB79BF224C5A4800B39390 /* ProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		534DDF2A220BE03A00032A9C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		534DDF2C220BE35700032A9C /* FighterEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterEnum.swift; sourceTree = "<group>"; };
 		53964A2F2207C2A10069D8E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		53CB79BC224C5A4700B39390 /* T7 Quiz App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T7 Quiz App-Bridging-Header.h"; sourceTree = "<group>"; };
+		53CB79BD224C5A4800B39390 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		53CB79BE224C5A4800B39390 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		53CB79BF224C5A4800B39390 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,12 @@
 		532A7B42220280790030C30C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				53CB79BD224C5A4800B39390 /* ProgressHUD.bundle */,
+				53CB79BE224C5A4800B39390 /* ProgressHUD.h */,
+				53CB79BF224C5A4800B39390 /* ProgressHUD.m */,
 				532A7B3522027BAB0030C30C /* LaunchScreen.storyboard */,
 				532A7B3822027BAB0030C30C /* Info.plist */,
+				53CB79BC224C5A4700B39390 /* T7 Quiz App-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,6 +165,7 @@
 				TargetAttributes = {
 					532A7B2822027BA90030C30C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -183,6 +194,7 @@
 			files = (
 				530C4113220BD28900101282 /* QuizViewController.xib in Resources */,
 				532A7B3722027BAB0030C30C /* LaunchScreen.storyboard in Resources */,
+				53CB79C0224C5A4800B39390 /* ProgressHUD.bundle in Resources */,
 				532A7B3422027BAB0030C30C /* Assets.xcassets in Resources */,
 				532A7B3222027BA90030C30C /* Main.storyboard in Resources */,
 				532A7B4A2202811B0030C30C /* CharacterCell.xib in Resources */,
@@ -198,6 +210,7 @@
 			files = (
 				532A7B492202811B0030C30C /* CharacterCell.swift in Sources */,
 				530C4112220BD28900101282 /* QuizViewController.swift in Sources */,
+				53CB79C1224C5A4800B39390 /* ProgressHUD.m in Sources */,
 				534DDF2D220BE35700032A9C /* FighterEnum.swift in Sources */,
 				534DDF29220BE01800032A9C /* QuizBank.swift in Sources */,
 				532A7B2D22027BA90030C30C /* AppDelegate.swift in Sources */,
@@ -350,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/T7 Quiz App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +372,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ramaez.T7-Quiz-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "T7 Quiz App/Supporting Files/T7 Quiz App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/T7 Quiz App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -375,6 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ramaez.T7-Quiz-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "T7 Quiz App/Supporting Files/T7 Quiz App-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
