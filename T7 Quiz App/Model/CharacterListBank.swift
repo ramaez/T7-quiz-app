@@ -12,7 +12,11 @@ class CharacterListBank {
     var list = [String]()
     
     init() {
+        list.append("Asuka Kazama")
         list.append("Eddy Gordo")
+        list.append("Heihachi")
         list.append("Jin Kazama")
+        list.append("King")
+        list.append("Paul Pheonix")
     }
 }

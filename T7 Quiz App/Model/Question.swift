@@ -18,6 +18,7 @@ class Question {
     let answer: Int
     let character: Fighter
     
+    
     init(text: String, answerOne: String, answerTwo: String, answerThree: String, answerFour: String, correctAnswer: Int, fighter: Fighter) {
         questionText = text
         firstAnswerText = answerOne
@@ -26,6 +27,7 @@ class Question {
         fourthAnswerText = answerFour
         answer = correctAnswer
         character = fighter
+        
     }
     
     

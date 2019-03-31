@@ -86,11 +86,11 @@ class QuizViewController: UIViewController {
         if pickedAnswer == correctAnswer {
             score = score + 1
             ProgressHUD.showSuccess("Correct")
-            print("correct")
+            print("Correct")
         }
         else {
             ProgressHUD.showError("Wrong")
-            print("wrong")
+            print("Wrong")
         }
     }
     
@@ -109,6 +109,30 @@ class QuizViewController: UIViewController {
             let answerB = QuizBank(picked: characterPicked).list[questionNumber].secondAnswerText
             let answerC = QuizBank(picked: characterPicked).list[questionNumber].thirdAnswerText
             let answerD = QuizBank(picked: characterPicked).list[questionNumber].fourthAnswerText
+            if answerA == "" {
+                answerBoxA.isHidden = true
+            }
+            else if answerA != "" {
+                answerBoxA.isHidden = false
+            }
+            if answerB == "" {
+                answerBoxB.isHidden = true
+            }
+            else if answerB != "" {
+                answerBoxB.isHidden = false
+            }
+            if answerC == "" {
+                answerBoxC.isHidden = true
+            }
+            else if answerC != "" {
+                answerBoxC.isHidden = false
+            }
+            if answerD == "" {
+                answerBoxD.isHidden = true
+            }
+            else if answerD != "" {
+                answerBoxD.isHidden = false
+            }
             answerBoxA.setTitle(answerA, for: .normal)
             answerBoxB.setTitle(answerB, for: .normal)
             answerBoxC.setTitle(answerC, for: .normal)

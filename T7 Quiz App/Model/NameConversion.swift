@@ -16,6 +16,18 @@ class NameConversion {
         else if name == "Jin Kazama" {
             return .jin
         }
+        else if name == "Asuka Kazama" {
+            return .asuka
+        }
+        else if name == "Heihachi" {
+            return .heihachi
+        }
+        else if name == "Paul Pheonix" {
+            return .paul
+        }
+        else if name == "King" {
+            return .king
+        }
         else {
             return .akuma
         }

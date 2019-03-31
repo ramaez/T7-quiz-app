@@ -29,7 +29,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        self.title = "Character Select"
         collectionView.register(UINib.init(nibName: "CharacterCell", bundle: nil), forCellWithReuseIdentifier: "CharCell")
         
         
@@ -50,7 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return characterList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,6 +65,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         
         cell.configure(with: characterList[indexPath.row])
         cell.cellView.backgroundColor = UIColor .red
+        cell.label.textColor = UIColor .white
+        cell.label.adjustsFontSizeToFitWidth = true
     
         return cell
     }
