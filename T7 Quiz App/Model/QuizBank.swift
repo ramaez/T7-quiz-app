@@ -41,6 +41,8 @@ class QuizBank {
             
             
         default:
+            
+            list.append(Question(text: "Woops! There are no questions for this character yet.", answerOne: "X", answerTwo: "X", answerThree: "X", answerFour: "X", correctAnswer: 1, fighter: Fighter.akuma))
             print("placeholder") //This is a placeholder eventually every character case will be covered
             
         }
